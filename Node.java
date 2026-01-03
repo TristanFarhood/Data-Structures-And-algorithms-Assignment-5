@@ -1,33 +1,31 @@
 public class Node {
 
-    int name;
-    boolean marked; 
+    private int name;
+    private boolean marked;
 
-    Node(int nodeName){ // constructor
-        this.name = nodeName; 
-        this.marked = false; 
+    public Node(int nodeName) {
+        this.name = nodeName;
+        this.marked = false;
     }
 
-    public void setMark(boolean mark){
-        this.marked = mark; 
+    public void setMark(boolean mark) {
+        this.marked = mark;
+    }
+
+    public boolean getMark() {
+        return this.marked;
     }
 
     public int getName() {
         return this.name;
     }
 
-    public boolean getMarked() {
-        return this.marked;
+    
+
+    public boolean equals(Node other) {
+        if (other == null) return false;
+        return this.name == other.name;
     }
 
-
-    // returns true of this node has the same name as otherNode; returns false otherwise. 
-    boolean equals(Node otherNode){
-
-        if (this.name == otherNode.getName()){
-            return true;
-        }
-        return false; // returns false if othewise
-    }
     
 }
